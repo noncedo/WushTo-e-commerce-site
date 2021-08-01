@@ -1,0 +1,84 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<style>
+   .quantity{
+	   display:inline-block;
+	   font-weight:700;
+	   padding-right:10px;
+
+   }
+   
+   .chg-quantity{
+		width:12px;
+		cursor:pointer;
+		display:block;
+   }
+   
+</style>
+
+<br>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+	<a href="{%url 'products'%}" class="btn btn-outline-secondary">&#8592; Continue Shopping</a>
+	<hr>
+	<table class="table">
+	<tr>
+	<th><h5>Items: <strong>3</strong></h5></th>
+	<th><h5>Total: <strong>R43</strong></h5></th>
+	<th>
+	<a style="float:right;margin:5px;" class="btn btn-success" href="{%url 'checkout'%}">Checkout</a>
+	</th>
+	</tr>
+	</table>
+	</div>
+	<div class="shadow-lg p-3 mb-5 bg-white rounded">
+		<div style="display:flex;align-items:flex-strech">
+			<div style="flex:2">
+				
+			</div>
+			<div style="flex:2">
+				<b>Item</b>
+			</div>
+			<div style="flex:1">
+				<b>Price</b>
+			</div>
+			<div style="flex:1">
+				<b>Quantity</b>
+			</div>
+			<div style="flex:1">
+				<b>Total:</b>
+			</div>
+			
+		</div>
+		<div style="display:flex;align-items:flex-strech">
+			<div style="flex:2">
+			{%load static%}
+				<img  style="width:100px;" src="{% static 'images/placeholder.png' %}" alt="Image"/>
+			</div>
+			<div style="flex:2">
+			Product 1
+			</div>
+			<div style="flex:1">
+				R 20
+			</div>
+			<div style="flex:1">
+			<p class="quantity">2</p>
+			    <div class="quantity">
+					{%load static%}
+					<img src="{% static 'images/arrow-up.png' %}" style="width:20px; height:20px" class="chg-quantity" />
+					{%load static%}
+					<img src="{% static 'images/arrow-down.jpg' %}" style="width:20px; height:20px" class="chg-quantity" />
+				</div>
+			</div>
+			<div style="flex:1">
+				
+			</div>
+			
+		</div>
+	</div>
+  </div>
+</div>
+
+{%endblock%}
